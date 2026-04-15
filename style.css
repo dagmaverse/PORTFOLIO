@@ -6,6 +6,7 @@
   text-decoration: none;
   scroll-behavior: smooth;
   font-family: "Poppins";
+  cursor: none;
 }
 :root {
   --bg-color: #080808;
@@ -306,6 +307,7 @@ section {
 .skills-box {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: 1fr;
   place-items: center;
   gap: 3rem;
   row-gap: 5rem;
@@ -343,6 +345,56 @@ section {
 .skill-card p {
   font-size: 1.6rem;
 }
+
+/* STATS SECTION */
+.stats {
+  background-color: var(--second-bg-color);
+  padding: 3rem 15% 1rem 15% !important;
+  margin-bottom: 0;
+  min-height: auto !important;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #087bdf 10%, #1dbdfc 100%);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(12, 138, 234, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px var(--main-color);
+}
+
+.counter {
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: black;
+  margin-bottom: 1rem;
+  text-shadow: none;
+  display: block;
+  line-height: 1;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box p {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 600;
+}
+
 .contact {
   background-color: var(--bg-color);
 }
@@ -433,4 +485,94 @@ footer {
   cursor: pointer;
   display: none;
   z-index: 1000;
+}
+
+/* PROGRESS BAR */
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(270deg, #087bdf 10%, #1dbdfc 100%);
+  box-shadow: 0 0 10px var(--main-color);
+  width: 0%;
+  z-index: 999;
+  transition: width 0.1s ease;
+}
+
+/* PARTICLES CANVAS */
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* CUSTOM CURSOR */
+#customCursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  box-shadow: 0 0 10px var(--main-color);
+  transition: transform 0.1s ease-out;
+}
+
+/* BUTTON RIPPLE EFFECT */
+.btn, .gradient-btn, .goal-box, .skill-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* FLOATING ANIMATION */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* LAZY LOADING IMAGES */
+img {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+img.loading {
+  opacity: 0;
+}
+
+/* COUNTER ANIMATION */
+.counter {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--main-color);
 }
