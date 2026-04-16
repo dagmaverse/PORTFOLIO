@@ -79,7 +79,7 @@ body {
   transform: scale(1.1);
 }
 span {
-  background: linear-gradient(270deg, #087bdf 10%, #1dbdfc 100%);
+  background: linear-gradient(270deg, #9b08df 10%, #1dbdfc 100%);
   background-clip: text;
   color: transparent;
 }
