@@ -73,7 +73,7 @@ body {
   font-weight: 800;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 .logo:hover {
   transform: scale(1.1);
@@ -82,6 +82,11 @@ span {
   background: linear-gradient(270deg, #087bdf 10%, #1dbdfc 100%);
   background-clip: text;
   color: transparent;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
 }
 .navbar a {
   font-size: 1.8rem;
@@ -105,7 +110,7 @@ span {
   transition: 0.3s ease-in-out;
   color: white;
   border: none;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 .gradient-btn:hover {
   transform: scale(1.05);
@@ -578,9 +583,9 @@ img.loading {
 }
 
 /* RESPONSIVE STYLES */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .header {
-    padding: 2rem 8%;
+    padding: 2.5rem 8%;
   }
 
   section {
@@ -589,21 +594,15 @@ img.loading {
 
   .home,
   .about {
-    gap: 5rem;
-  }
-
-  .home-content,
-  .about-content {
-    align-items: center;
-    text-align: center;
+    gap: 6rem;
   }
 
   .home-content h1 {
-    font-size: 6rem;
+    font-size: 6.5rem;
   }
 
   .home-content h3 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .home-content p,
@@ -612,63 +611,32 @@ img.loading {
   }
 
   .logo {
-    font-size: 2.6rem;
-  }
-
-  #menu-icon {
-    display: block;
-  }
-
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    background: var(--header-bg);
-    backdrop-filter: blur(16px);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    z-index: 999;
-  }
-
-  .navbar.active {
-    display: flex;
+    font-size: 2.8rem;
   }
 
   .navbar a {
-    font-size: 1.6rem;
-    width: 100%;
-    margin: 0;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1.7rem;
+    margin-left: 3rem;
   }
 
   .gradient-btn,
   .btn {
-    font-size: 1.9rem;
-    padding: 1.2rem 2.5rem;
-  }
-
-  .btn-group {
-    gap: 1rem;
+    font-size: 1.85rem;
+    padding: 1.1rem 2.3rem;
   }
 
   .social-icons a {
-    width: 55px;
-    height: 55px;
-    font-size: 2.2rem;
-    margin: 2rem 0.4rem;
+    width: 58px;
+    height: 58px;
+    font-size: 2.3rem;
   }
 
   .goal-box {
-    min-height: 620px;
+    min-height: 660px;
   }
 
   .goal-info h4 {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
   }
 
   .skill-card {
@@ -676,45 +644,31 @@ img.loading {
   }
 
   .skill-card h3 {
-    font-size: 2.8rem;
+    font-size: 3rem;
   }
 
   .skill-card p {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
   }
 
   .stat-box {
-    padding: 2.6rem;
+    padding: 2.8rem;
   }
 
   .counter {
     font-size: 4rem;
-    padding: 1rem 1.5rem;
   }
 
   .stat-box p {
-    font-size: 1.7rem;
-  }
-
-  .contact form {
-    gap: 2rem;
-  }
-
-  .contact form .input-box input,
-  .contact form textarea {
-    font-size: 1.7rem;
-    padding: 2.3rem;
+    font-size: 1.75rem;
   }
 }
 
-@media (max-width: 768px) {
-  html {
-    overflow-x: hidden;
-  }
-
+@media (max-width: 1024px) {
   .header {
     flex-wrap: wrap;
-    padding: 1.5rem 6%;
+    justify-content: space-between;
+    padding: 2rem 6%;
   }
 
   #menu-icon {
@@ -726,31 +680,52 @@ img.loading {
     top: 100%;
     left: 0;
     width: 100%;
-    padding: 1rem 0;
-    background: var(--header-bg);
-    backdrop-filter: blur(16px);
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    background: var(--header-bg);
+    backdrop-filter: blur(18px);
+    transition: max-height 0.35s ease, opacity 0.35s ease;
+    opacity: 0;
     z-index: 999;
   }
 
   .navbar.active {
-    display: flex;
+    max-height: 360px;
+    opacity: 1;
+    padding: 1rem 0;
   }
 
   .navbar a {
     width: 100%;
     margin: 0;
     padding: 1rem 0;
+    text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1.7rem;
+  }
+
+  .gradient-btn,
+  .btn {
+    font-size: 1.85rem;
+    padding: 1.2rem 2.2rem;
+  }
+
+  .btn-group {
+    gap: 1rem;
   }
 
   .header .gradient-btn {
-    margin-top: 1rem;
     width: 100%;
-    max-width: 260px;
+    max-width: 280px;
+    margin: 1rem auto 0;
+  }
+
+  #theme-icon {
+    order: 2;
   }
 
   section {
@@ -769,28 +744,21 @@ img.loading {
   }
 
   .home-content h1 {
-    font-size: 5rem;
+    font-size: 5.8rem;
   }
 
   .home-content h3 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   .home-content p {
-    font-size: 1.6rem;
+    font-size: 1.65rem;
   }
 
   .btn,
   .gradient-btn {
     width: 100%;
     max-width: 320px;
-    padding: 1.4rem 2rem;
-    font-size: 1.95rem;
-  }
-
-  .btn-group {
-    flex-direction: column;
-    width: 100%;
   }
 
   .home-img {
@@ -812,7 +780,7 @@ img.loading {
   }
 
   .about-content p {
-    font-size: 1.6rem;
+    font-size: 1.65rem;
   }
 
   .heading {
@@ -832,7 +800,7 @@ img.loading {
   }
 
   .goal-box {
-    min-height: 520px;
+    min-height: 540px;
   }
 
   .goal-info {
@@ -840,27 +808,27 @@ img.loading {
   }
 
   .goal-info h4 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .goal-info p {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
   }
 
   .skill-card {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 2rem;
   }
 
   .skill-card img {
-    max-width: 240px;
+    max-width: 260px;
   }
 
   .skill-card h3 {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .skill-card p {
-    font-size: 1.4rem;
+    font-size: 1.45rem;
   }
 
   .stats {
@@ -868,16 +836,16 @@ img.loading {
   }
 
   .stat-box {
-    padding: 2rem;
+    padding: 2.4rem;
   }
 
   .counter {
-    font-size: 3.5rem;
-    padding: 1rem 1.3rem;
+    font-size: 3.8rem;
+    padding: 1rem 1.4rem;
   }
 
   .stat-box p {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
   }
 
   .contact form {
@@ -894,8 +862,8 @@ img.loading {
   .contact form .input-box input,
   .contact form textarea {
     width: 100%;
-    padding: 2rem;
-    font-size: 1.7rem;
+    padding: 2.2rem;
+    font-size: 1.75rem;
   }
 
   #scrollTopBtn {
@@ -903,5 +871,96 @@ img.loading {
     bottom: 15px;
     font-size: 1.8rem;
     padding: 12px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem 5%;
+  }
+
+  section {
+    padding: 6.5rem 5%;
+  }
+
+  .home-content h1 {
+    font-size: 4.8rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.4rem;
+  }
+
+  .home-content p {
+    font-size: 1.55rem;
+  }
+
+  .navbar a {
+    font-size: 1.5rem;
+  }
+
+  .gradient-btn,
+  .btn {
+    font-size: 1.75rem;
+    padding: 1.3rem 2rem;
+  }
+
+  .social-icons a {
+    width: 52px;
+    height: 52px;
+    font-size: 2rem;
+  }
+
+  .goal-box {
+    min-height: 500px;
+  }
+
+  .goal-info h4 {
+    font-size: 2.8rem;
+  }
+
+  .goal-info p {
+    font-size: 1.35rem;
+  }
+
+  .skill-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .skill-card h3 {
+    font-size: 2.2rem;
+  }
+
+  .skill-card p {
+    font-size: 1.35rem;
+  }
+
+  .stat-box {
+    padding: 1.8rem;
+  }
+
+  .counter {
+    font-size: 3rem;
+    padding: 1rem 1.2rem;
+  }
+
+  .stat-box p {
+    font-size: 1.4rem;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    padding: 1.8rem;
+    font-size: 1.6rem;
+  }
+}
+
+@media (hover: none) {
+  body {
+    cursor: default;
+  }
+
+  #customCursor {
+    display: none;
   }
 }
