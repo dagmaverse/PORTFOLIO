@@ -12,14 +12,14 @@
   --bg-color: #080808;
   --second-bg-color: #121111;
   --text-color: white;
-  --main-color: #ea0ccc;
+  --main-color: #0c8aea;
   --header-bg: rgba(0, 0, 0, 0.3);
 }
 .darkmode {
   --bg-color: #ffffff;
   --second-bg-color: #f5f7f6;
   --text-color: rgba(15, 15, 15, 0.865);
-  --main-color: #ea0cba;
+  --main-color: #0c8aea;
   --header-bg: rgba(255, 255, 255, 0.3);
 }
 html {
@@ -79,7 +79,7 @@ body {
   transform: scale(1.1);
 }
 span {
-  background: linear-gradient(270deg, #9b08df 10%, #1dbdfc 100%);
+  background: linear-gradient(270deg, #087bdf 10%, #1dbdfc 100%);
   background-clip: text;
   color: transparent;
 }
@@ -585,24 +585,24 @@ img.loading {
 /* RESPONSIVE STYLES */
 @media (max-width: 1200px) {
   .header {
-    padding: 2.2rem 7%;
+    padding: 2.5rem 8%;
   }
 
   section {
-    padding: 7.5rem 7%;
+    padding: 8rem 8%;
   }
 
   .home,
   .about {
-    gap: 5.5rem;
+    gap: 6rem;
   }
 
   .home-content h1 {
-    font-size: 6rem;
+    font-size: 6.5rem;
   }
 
   .home-content h3 {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .home-content p,
@@ -623,10 +623,6 @@ img.loading {
   .btn {
     font-size: 1.85rem;
     padding: 1.1rem 2.3rem;
-  }
-
-  .header .gradient-btn {
-    display: none !important;
   }
 
   .social-icons a {
@@ -672,9 +668,7 @@ img.loading {
   .header {
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 1.6rem 5%;
+    padding: 2rem 6%;
   }
 
   #menu-icon {
@@ -692,10 +686,9 @@ img.loading {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
-    background: rgba(5, 5, 5, 0.96);
-    backdrop-filter: blur(28px);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 40px rgba(0, 0, 0, 0.45);
+    gap: 0.5rem;
+    background: var(--header-bg);
+    backdrop-filter: blur(18px);
     transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
     opacity: 0;
     pointer-events: none;
@@ -703,19 +696,19 @@ img.loading {
   }
 
   .navbar.active {
-    max-height: 190px;
+    max-height: 420px;
     opacity: 1;
     pointer-events: auto;
-    padding: 0.45rem 0;
+    padding: 1rem 0;
   }
 
   .navbar a {
     width: 100%;
     margin: 0;
-    padding: 0.65rem 0;
+    padding: 1rem 0;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .navbar a:last-child {
@@ -724,26 +717,19 @@ img.loading {
 
   .gradient-btn,
   .btn {
-    font-size: 1.75rem;
-    padding: 0.95rem 1.8rem;
+    font-size: 1.85rem;
+    padding: 1.2rem 2rem;
     width: auto;
   }
 
   .btn-group {
     gap: 1rem;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .btn-group a {
-    width: 100%;
-    max-width: 260px;
-    justify-content: center;
-    display: inline-flex;
   }
 
   .header .gradient-btn {
-    display: none !important;
+    width: auto;
+    max-width: 320px;
+    margin: 1rem 0 0;
   }
 
   #theme-icon {
@@ -751,7 +737,7 @@ img.loading {
   }
 
   section {
-    padding: 6.5rem 5%;
+    padding: 7rem 6%;
   }
 
   .home {
@@ -780,7 +766,7 @@ img.loading {
   .btn,
   .gradient-btn {
     width: auto;
-    max-width: 260px;
+    max-width: 320px;
   }
 
   .home-img {
