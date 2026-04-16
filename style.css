@@ -679,6 +679,7 @@ img.loading {
     position: absolute;
     top: 100%;
     left: 0;
+    right: 0;
     width: 100%;
     max-height: 0;
     overflow: hidden;
@@ -688,14 +689,16 @@ img.loading {
     gap: 0.5rem;
     background: var(--header-bg);
     backdrop-filter: blur(18px);
-    transition: max-height 0.35s ease, opacity 0.35s ease;
+    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
     opacity: 0;
+    pointer-events: none;
     z-index: 999;
   }
 
   .navbar.active {
-    max-height: 360px;
+    max-height: 420px;
     opacity: 1;
+    pointer-events: auto;
     padding: 1rem 0;
   }
 
@@ -708,10 +711,15 @@ img.loading {
     font-size: 1.7rem;
   }
 
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+
   .gradient-btn,
   .btn {
     font-size: 1.85rem;
-    padding: 1.2rem 2.2rem;
+    padding: 1.2rem 2rem;
+    width: auto;
   }
 
   .btn-group {
@@ -719,9 +727,9 @@ img.loading {
   }
 
   .header .gradient-btn {
-    width: 100%;
-    max-width: 280px;
-    margin: 1rem auto 0;
+    width: auto;
+    max-width: 320px;
+    margin: 1rem 0 0;
   }
 
   #theme-icon {
@@ -757,7 +765,7 @@ img.loading {
 
   .btn,
   .gradient-btn {
-    width: 100%;
+    width: auto;
     max-width: 320px;
   }
 
