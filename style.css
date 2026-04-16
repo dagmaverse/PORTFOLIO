@@ -576,3 +576,306 @@ img.loading {
   font-weight: 800;
   color: var(--main-color);
 }
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+  .header {
+    padding: 2rem 8%;
+  }
+
+  section {
+    padding: 8rem 8%;
+  }
+
+  .home,
+  .about {
+    gap: 5rem;
+  }
+
+  .home-content,
+  .about-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 6rem;
+  }
+
+  .home-content h3 {
+    font-size: 3rem;
+  }
+
+  .home-content p,
+  .about-content p {
+    font-size: 1.7rem;
+  }
+
+  .logo {
+    font-size: 2.6rem;
+  }
+
+  .navbar a {
+    font-size: 1.6rem;
+    margin-left: 2rem;
+  }
+
+  .gradient-btn,
+  .btn {
+    font-size: 1.9rem;
+    padding: 1.2rem 2.5rem;
+  }
+
+  .btn-group {
+    gap: 1rem;
+  }
+
+  .social-icons a {
+    width: 55px;
+    height: 55px;
+    font-size: 2.2rem;
+    margin: 2rem 0.4rem;
+  }
+
+  .goal-box {
+    min-height: 620px;
+  }
+
+  .goal-info h4 {
+    font-size: 3.5rem;
+  }
+
+  .skill-card {
+    padding: 4rem 2rem;
+  }
+
+  .skill-card h3 {
+    font-size: 2.8rem;
+  }
+
+  .skill-card p {
+    font-size: 1.5rem;
+  }
+
+  .stat-box {
+    padding: 2.6rem;
+  }
+
+  .counter {
+    font-size: 4rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .stat-box p {
+    font-size: 1.7rem;
+  }
+
+  .contact form {
+    gap: 2rem;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    font-size: 1.7rem;
+    padding: 2.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding: 1.5rem 6%;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background: var(--header-bg);
+    backdrop-filter: blur(16px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 999;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .navbar a {
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header .gradient-btn {
+    margin-top: 1rem;
+    width: 100%;
+    max-width: 260px;
+  }
+
+  section {
+    padding: 7rem 6%;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.4rem;
+  }
+
+  .home-content p {
+    font-size: 1.6rem;
+  }
+
+  .btn,
+  .gradient-btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 1.4rem 2rem;
+    font-size: 1.95rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-img {
+    display: none;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .about-img img {
+    width: 70vw;
+    max-width: 280px;
+  }
+
+  .about-content h2 {
+    font-size: 5.5rem;
+  }
+
+  .about-content p {
+    font-size: 1.6rem;
+  }
+
+  .heading {
+    font-size: 5.5rem;
+  }
+
+  .goals-container,
+  .skills-box,
+  .stats-container {
+    gap: 2rem;
+  }
+
+  .goal-box,
+  .skill-card,
+  .stat-box {
+    width: 100%;
+  }
+
+  .goal-box {
+    min-height: 520px;
+  }
+
+  .goal-info {
+    padding: 2rem;
+  }
+
+  .goal-info h4 {
+    font-size: 3rem;
+  }
+
+  .goal-info p {
+    font-size: 1.4rem;
+  }
+
+  .skill-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .skill-card img {
+    max-width: 240px;
+  }
+
+  .skill-card h3 {
+    font-size: 2.4rem;
+  }
+
+  .skill-card p {
+    font-size: 1.4rem;
+  }
+
+  .stats {
+    padding: 2rem 6% 1rem 6% !important;
+  }
+
+  .stat-box {
+    padding: 2rem;
+  }
+
+  .counter {
+    font-size: 3.5rem;
+    padding: 1rem 1.3rem;
+  }
+
+  .stat-box p {
+    font-size: 1.5rem;
+  }
+
+  .contact form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .contact form .input-box {
+    width: 100%;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+  }
+
+  #scrollTopBtn {
+    right: 15px;
+    bottom: 15px;
+    font-size: 1.8rem;
+    padding: 12px 14px;
+  }
+}
