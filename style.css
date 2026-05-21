@@ -49,7 +49,10 @@ body {
   display: none;
   cursor: pointer;
   font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0;
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
@@ -59,7 +62,10 @@ body {
   color: var(--main-color);
   cursor: pointer;
   font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0;
   background: none;
   -webkit-background-clip: initial;
   background-clip: initial;
@@ -118,7 +124,7 @@ span {
 }
 section {
   min-height: 100vh;
-  padding: 10rem 15%;
+  padding: 7rem 15%;
 }
 .home {
   display: flex;
@@ -154,7 +160,9 @@ section {
   transition: 0.4s ease-in-out;
 }
 .home-img img:hover {
-  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+  box-shadow:
+    0 0 25px var(--main-color),
+    0 0 50px var(--main-color),
     0 0 15px var(--main-color);
 }
 .social-icons a {
@@ -196,7 +204,9 @@ section {
 
 .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+  box-shadow:
+    0 0 25px var(--main-color),
+    0 0 50px var(--main-color);
 }
 .btn-group a:nth-of-type(2) {
   background-color: transparent;
@@ -223,7 +233,9 @@ section {
   transition: 0.4s ease-in-out;
 }
 .about-img img:hover {
-  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+  box-shadow:
+    0 0 25px var(--main-color),
+    0 0 50px var(--main-color),
     0 0 100px var(--main-color);
 }
 .about-content h2 {
@@ -249,7 +261,7 @@ section {
 .heading {
   text-align: center;
   font-size: 7rem;
-  margin: 5rem 0;
+  margin: 4rem 0;
 }
 .goals {
   background-color: var(--bg-color);
@@ -273,7 +285,9 @@ section {
   border-radius: 3rem;
   cursor: pointer;
   outline: none;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+  transition:
+    transform 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     background 0.2s ease-in-out;
   will-change: transform;
   transform: translateZ(0);
@@ -282,7 +296,6 @@ section {
   background: var(--second-bg-color);
   color: var(--main-color);
   border: 5px solid var(--main-color);
-  /* lift up (negative Y) and force override of inline AOS transforms */
   transform: scale(1.03) translateY(-7px) !important;
   box-shadow: 0 0 12px var(--main-color);
 }
@@ -332,12 +345,16 @@ section {
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 0 5px var(--main-color);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
   will-change: transform;
   transform: translateZ(0);
 }
 .skill-card:hover {
-  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+  box-shadow:
+    0 0 25px var(--main-color),
+    0 0 50px var(--main-color);
   transform: scale(1.02) translateY(-7px) !important;
 }
 .skill-card img {
@@ -352,7 +369,6 @@ section {
   font-size: 1.6rem;
 }
 
-/* STATS SECTION */
 .stats {
   background-color: var(--second-bg-color);
   padding: 3rem 15% 1rem 15% !important;
@@ -373,7 +389,9 @@ section {
   padding: 3rem;
   border-radius: 1.5rem;
   box-shadow: 0 0 20px rgba(12, 138, 234, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .stat-box:hover {
@@ -427,8 +445,11 @@ section {
   border: 2px solid var(--main-color);
   margin: 1.5rem 0;
   resize: none;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease,
-    transform 0.25s ease, background-color 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease;
 }
 .contact form .input-box input:hover,
 .contact form textarea:hover {
@@ -493,7 +514,6 @@ footer {
   z-index: 1000;
 }
 
-/* PROGRESS BAR */
 #progressBar {
   position: fixed;
   top: 0;
@@ -506,7 +526,6 @@ footer {
   transition: width 0.1s ease;
 }
 
-/* PARTICLES CANVAS */
 #particleCanvas {
   position: fixed;
   top: 0;
@@ -517,7 +536,6 @@ footer {
   pointer-events: none;
 }
 
-/* CUSTOM CURSOR */
 #customCursor {
   position: fixed;
   width: 20px;
@@ -530,8 +548,10 @@ footer {
   transition: transform 0.1s ease-out;
 }
 
-/* BUTTON RIPPLE EFFECT */
-.btn, .gradient-btn, .goal-box, .skill-card {
+.btn,
+.gradient-btn,
+.goal-box,
+.skill-card {
   position: relative;
   overflow: hidden;
 }
@@ -552,9 +572,9 @@ footer {
   }
 }
 
-/* FLOATING ANIMATION */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -566,7 +586,6 @@ footer {
   animation: float 3s ease-in-out infinite;
 }
 
-/* LAZY LOADING IMAGES */
 img {
   opacity: 1;
   transition: opacity 0.5s ease-in;
@@ -576,21 +595,19 @@ img.loading {
   opacity: 0;
 }
 
-/* COUNTER ANIMATION */
 .counter {
   font-size: 3rem;
   font-weight: 800;
   color: var(--main-color);
 }
 
-/* RESPONSIVE STYLES */
 @media (max-width: 1200px) {
   .header {
     padding: 2.5rem 8%;
   }
 
   section {
-    padding: 8rem 8%;
+    padding: 6.5rem 8%;
   }
 
   .home,
@@ -690,7 +707,10 @@ img.loading {
     gap: 0.5rem;
     background: var(--header-bg);
     backdrop-filter: blur(18px);
-    transition: max-height 0.35s ease, opacity 0.35s ease, padding 0.35s ease;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.35s ease,
+      padding 0.35s ease;
     opacity: 0;
     pointer-events: none;
     z-index: 999;
@@ -738,7 +758,7 @@ img.loading {
   }
 
   section {
-    padding: 7rem 6%;
+    padding: 6rem 6%;
   }
 
   .home {
@@ -889,7 +909,7 @@ img.loading {
   }
 
   section {
-    padding: 6.5rem 5%;
+    padding: 5.5rem 5%;
   }
 
   .home-content h1 {
