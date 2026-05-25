@@ -35,13 +35,24 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  padding: 3rem 15%;
+  padding: 2.5rem 15%;
   background: var(--header-bg);
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+}
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--main-color);
+  z-index: 1100;
+  pointer-events: none;
+  transition: width 0.15s ease-out;
 }
 #menu-icon {
   font-size: 3.5rem;
@@ -575,4 +586,378 @@ img.loading {
   font-size: 3rem;
   font-weight: 800;
   color: var(--main-color);
+}
+
+/* ===== RESPONSIVE DESIGN: TABLETS (768px and below) ===== */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 2rem 5%;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .navbar.active {
+    max-height: 500px;
+  }
+
+  .navbar a {
+    margin: 1rem 2rem;
+    border-bottom: 2px solid transparent;
+  }
+
+  .gradient-btn {
+    padding: 0.8rem 1.5rem;
+  }
+
+  section {
+    padding: 5rem 5%;
+  }
+
+  .home {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .home-content p {
+    font-size: 1.2rem;
+  }
+
+  .home-img img {
+    width: 60vw;
+    max-width: 300px;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-img img {
+    width: 60vw;
+    max-width: 300px;
+  }
+
+  .about-content h2 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .about-content p {
+    font-size: 1.3rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+  }
+
+  .goal-box {
+    height: 400px;
+  }
+
+  .goal-info h4 {
+    font-size: 2.5rem;
+  }
+
+  .goal-info p {
+    font-size: 1.1rem;
+  }
+
+  .goal-info i {
+    font-size: 5rem;
+  }
+
+  .skill-card {
+    padding: 3rem 1.5rem;
+  }
+
+  .skill-card h3 {
+    font-size: 2rem;
+  }
+
+  .skill-card p {
+    font-size: 1.2rem;
+  }
+
+  .skill-card img {
+    max-width: 200px;
+  }
+
+  .stats {
+    padding: 3rem 5% 1rem 5% !important;
+  }
+
+  .stat-box {
+    padding: 2rem;
+  }
+
+  .counter {
+    font-size: 3rem;
+  }
+
+  .stat-box p {
+    font-size: 1.3rem;
+  }
+
+  .contact form {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .footer ul li {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  .footer ul {
+    font-size: 1.4rem;
+  }
+
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ===== RESPONSIVE DESIGN: MOBILE (480px and below) ===== */
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 40%;
+  }
+
+  .header {
+    padding: 1.5rem 3%;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  #menu-icon {
+    font-size: 2.5rem;
+  }
+
+  #theme-icon {
+    font-size: 2rem;
+  }
+
+  .gradient-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 4rem 3%;
+  }
+
+  .home-content h1 {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .home-img img {
+    width: 80vw;
+    max-width: 250px;
+  }
+
+  .social-icons a {
+    width: 50px;
+    font-size: 24px;
+    margin: 2rem 0.3rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .btn,
+  .btn-group a {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .about-img img {
+    width: 80vw;
+    max-width: 250px;
+  }
+
+  .about-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+
+  .goals-container {
+    gap: 1.5rem;
+  }
+
+  .goal-box {
+    height: 300px;
+  }
+
+  .goal-info {
+    padding: 2rem;
+  }
+
+  .goal-info h4 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+  }
+
+  .goal-info p {
+    font-size: 1rem;
+  }
+
+  .goal-info i {
+    font-size: 3rem;
+  }
+
+  .skills-box {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skill-card {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card p {
+    font-size: 1rem;
+  }
+
+  .skill-card img {
+    max-width: 150px;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stat-box {
+    padding: 1.5rem;
+  }
+
+  .counter {
+    font-size: 2.5rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .stat-box p {
+    font-size: 1.1rem;
+  }
+
+  .contact h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact form {
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .contact form .input-box input,
+  .contact form textarea {
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+
+  .contact form .input-box {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 3rem 0;
+  }
+
+  .footer ul {
+    font-size: 1.2rem;
+  }
+
+  .footer .copyright {
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+
+  #scrollTopBtn {
+    bottom: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
 }
