@@ -41,7 +41,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
 }
 #progressBar {
   position: fixed;
@@ -529,11 +529,12 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  height: 4px;
+  width: 0;
+  height: 5px;
   background: linear-gradient(270deg, #087bdf 10%, #1dbdfc 100%);
-  box-shadow: 0 0 10px var(--main-color);
-  width: 0%;
-  z-index: 999;
+  box-shadow: 0 0 10px rgba(12, 138, 234, 0.8);
+  z-index: 1101;
+  pointer-events: none;
   transition: width 0.1s ease;
 }
 
