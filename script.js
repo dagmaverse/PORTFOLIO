@@ -10,7 +10,6 @@ document.addEventListener('mousemove', (e) => {
   customCursor.style.top = e.clientY - 10 + 'px';
 });
 
-// Hide custom cursor when mouse leaves window
 document.addEventListener('mouseenter', () => {
   customCursor.style.opacity = '1';
 });
@@ -188,7 +187,6 @@ menuIcon.onclick = () => {
     menuIcon.textContent.trim() === "menu" ? "close" : "menu";
 };
 
-// CLOSE MENU WHEN CLICK
 document.querySelectorAll(".navbar a").forEach(link => {
   link.addEventListener("click", () => {
     navbar.classList.remove("active");
@@ -200,24 +198,44 @@ document.querySelectorAll(".navbar a").forEach(link => {
 let darkMode = localStorage.getItem("darkmode");
 const themeSwitch = document.getElementById("theme-icon");
 const themeColorPicker = document.getElementById("theme-color-picker");
+const gradientColorPicker = document.getElementById("gradient-color-picker");
 const defaultThemeColor = getComputedStyle(document.documentElement).getPropertyValue("--main-color").trim() || "#0c8aea";
+const defaultGradientColor = getComputedStyle(document.documentElement).getPropertyValue("--gradient-end").trim() || "#1dbdfc";
 
 const setThemeColor = (color) => {
   document.documentElement.style.setProperty("--main-color", color);
+  document.documentElement.style.setProperty("--gradient-start", color);
   if (themeColorPicker) themeColorPicker.value = color;
   localStorage.setItem("themeColor", color);
 };
 
+const setGradientColor = (color) => {
+  document.documentElement.style.setProperty("--gradient-end", color);
+  if (gradientColorPicker) gradientColorPicker.value = color;
+  localStorage.setItem("gradientColor", color);
+};
+
 const savedThemeColor = localStorage.getItem("themeColor");
+const savedGradientColor = localStorage.getItem("gradientColor");
 if (savedThemeColor) {
   setThemeColor(savedThemeColor);
 } else if (themeColorPicker) {
   themeColorPicker.value = defaultThemeColor;
 }
+if (savedGradientColor) {
+  setGradientColor(savedGradientColor);
+} else if (gradientColorPicker) {
+  gradientColorPicker.value = defaultGradientColor;
+}
 
 if (themeColorPicker) {
   themeColorPicker.addEventListener("input", (e) => {
     setThemeColor(e.target.value);
+  });
+}
+if (gradientColorPicker) {
+  gradientColorPicker.addEventListener("input", (e) => {
+    setGradientColor(e.target.value);
   });
 }
 
@@ -228,7 +246,7 @@ const enableDarkmode = () => {
 
 const disableDarkmode = () => {
   document.body.classList.remove("darkmode");
-  localStorage.setItem("darkmode", null);
+  localStorage.removeItem("darkmode");
 };
 
 const updateIcon = () => {
@@ -244,6 +262,11 @@ themeSwitch.addEventListener("click", () => {
   darkMode === "active" ? disableDarkmode() : enableDarkmode();
   darkMode = localStorage.getItem("darkmode");
   updateIcon();
+
+  const savedThemeColor = localStorage.getItem("themeColor");
+  const savedGradientColor = localStorage.getItem("gradientColor");
+  if (savedThemeColor) setThemeColor(savedThemeColor);
+  if (savedGradientColor) setGradientColor(savedGradientColor);
 });
 
 // TYPING EFFECT
