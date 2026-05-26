@@ -199,6 +199,27 @@ document.querySelectorAll(".navbar a").forEach(link => {
 // DARK MODE
 let darkMode = localStorage.getItem("darkmode");
 const themeSwitch = document.getElementById("theme-icon");
+const themeColorPicker = document.getElementById("theme-color-picker");
+const defaultThemeColor = getComputedStyle(document.documentElement).getPropertyValue("--main-color").trim() || "#0c8aea";
+
+const setThemeColor = (color) => {
+  document.documentElement.style.setProperty("--main-color", color);
+  if (themeColorPicker) themeColorPicker.value = color;
+  localStorage.setItem("themeColor", color);
+};
+
+const savedThemeColor = localStorage.getItem("themeColor");
+if (savedThemeColor) {
+  setThemeColor(savedThemeColor);
+} else if (themeColorPicker) {
+  themeColorPicker.value = defaultThemeColor;
+}
+
+if (themeColorPicker) {
+  themeColorPicker.addEventListener("input", (e) => {
+    setThemeColor(e.target.value);
+  });
+}
 
 const enableDarkmode = () => {
   document.body.classList.add("darkmode");
