@@ -287,7 +287,7 @@ section {
   margin: 3rem 0;
 }
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 9px;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 7px;
@@ -359,8 +359,9 @@ section {
   font-size: 8rem;
 }
 .skills {
-  background-color: var(--second-bg-color);
-  padding-bottom: 1rem;
+  background-color: var(--second-bg-color)  ;
+  min-height: auto !important;
+  padding-bottom: 12rem;
 }
 .skills-box {
   display: grid;
@@ -412,7 +413,7 @@ section {
 }
 
 .stats {
-  background-color: var(--second-bg-color);
+  background-color: var(--bg-color);
   padding: 1rem 15% 1rem 15% !important;
   margin-bottom: 0;
   min-height: auto !important;
