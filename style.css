@@ -162,7 +162,7 @@ span {
 }
 section {
   min-height: 100vh;
-  padding: 5rem 15%;
+  padding: 3rem 15%;
 }
 .home {
   display: flex;
@@ -360,6 +360,7 @@ section {
 }
 .skills {
   background-color: var(--second-bg-color);
+  padding-bottom: 1rem;
 }
 .skills-box {
   display: grid;
@@ -412,7 +413,7 @@ section {
 
 .stats {
   background-color: var(--second-bg-color);
-  padding: 3rem 15% 1rem 15% !important;
+  padding: 1rem 15% 1rem 15% !important;
   margin-bottom: 0;
   min-height: auto !important;
 }
@@ -545,7 +546,12 @@ footer {
   bottom: 30px;
   right: 30px;
   font-size: 2rem;
-  padding: 10px 15px;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 50%;
   background: var(--main-color);
@@ -580,7 +586,7 @@ footer {
   transition: transform 0.1s ease-out;
 }
 
-..btn,
+.btn,
 .gradient-btn,
 .goal-box,
 .skill-card {
