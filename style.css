@@ -794,7 +794,6 @@ img.loading {
   }
 }
 
-/* Mobile Devices (480px and below) */
 @media (max-width: 480px) {
   html {
     font-size: 50%;
