@@ -26,21 +26,6 @@ window.addEventListener('scroll', () => {
   progressBar.style.width = scrollProgress + '%';
 });
 
-// ===== LAZY LOADING IMAGES =====
-const images = document.querySelectorAll('img');
-const imageObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const img = entry.target;
-      img.classList.remove('loading');
-      observer.unobserve(img);
-    }
-  });
-});
-
-images.forEach((img) => {
-  imageObserver.observe(img);
-});
 
 // ===== FLOATING ANIMATION =====
 document.querySelectorAll('.home-img img, .about-img img').forEach((img) => {
